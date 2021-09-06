@@ -1,21 +1,23 @@
-# that-ton-p0
-
+# That Ton
+Revature bootcamp project 0
 
 # Revature College
+This is a Java console-based application; using Java8, Maven, PostgreSQL, and AWS RDS.
+Features: there are 2 types of users - Student and Professor.
 - A student can:
-  + create new account
+  + creating new account
   + login/logout
-  + check current GPA
-  + check / pay tuition
-  + apply scholarship
-  + check class schedule
+  + checking current GPA / major
+  + checking / paying tuition
+  + applying scholarship
+  + checking class schedule
 - A professor can
-  + create new account
+  + creating new account
   + login/logout
-  + check student list
-  + check student's GPA
-  + check scholarship application
-  + check class schedule
+  + checking student list
+  + updating student's GPA / major
+  + approving/denying scholarship application
+  + removing/updating student's classes
 
 
 
