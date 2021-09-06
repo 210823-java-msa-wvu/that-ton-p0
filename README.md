@@ -2,8 +2,8 @@
 Revature bootcamp project 0
 
 # Revature College
-This is a Java console-based application; using Java8, Maven, PostgreSQL, and AWS RDS.
-Features: there are 2 types of users - Student and Professor.
+**This is a Java console-based application; using Java8, Maven, PostgreSQL, and AWS RDS.
+**Features: there are 2 types of users - Student and Professor.
 - A student can:
   + creating new account
   + login/logout
