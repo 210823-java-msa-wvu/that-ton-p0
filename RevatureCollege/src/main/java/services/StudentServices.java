@@ -1,5 +1,6 @@
 package services;
 
+import models.ProfUser;
 import models.StudentUser;
 import repositories.StudentUserRepo;
 
@@ -16,5 +17,12 @@ public class StudentServices {
             }
         }
         return false;
+    }
+
+    public StudentUser stuCreate(Integer id, String email, String pw) {
+
+        StudentUser su = new StudentUser(id, email, pw);
+        su = studentUserRepo.add(su);
+        return su;
     }
 }

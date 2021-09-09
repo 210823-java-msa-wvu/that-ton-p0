@@ -41,6 +41,18 @@ public class StudentMenu {
                     break;
                 }
                 case 2: {
+                    System.out.println("What is your ID? ");
+                    Integer id = scanner.nextInt();
+                    scanner.nextLine();
+
+                    System.out.println("Please enter your email: ");
+                    String email = scanner.nextLine();
+
+                    System.out.println("Please choose your password: ");
+                    String pw = scanner.nextLine();
+
+                    studentServices.stuCreate(id,email,pw);
+                    System.out.println("User " + email + " was created successfully!");
                     break;
                 }
                 case 3: {

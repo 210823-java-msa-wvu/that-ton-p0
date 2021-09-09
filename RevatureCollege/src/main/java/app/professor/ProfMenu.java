@@ -9,6 +9,7 @@ public class ProfMenu {
 
         Scanner scanner = new Scanner(System.in);
         ProfServices profServices = new ProfServices();
+
         Boolean running = true;
 
         while(running) {
@@ -41,6 +42,18 @@ public class ProfMenu {
                     break;
                 }
                 case 2: {
+                    System.out.println("What is your ID? ");
+                    Integer id = scanner.nextInt();
+                    scanner.nextLine();
+
+                    System.out.println("Please enter your email: ");
+                    String email = scanner.nextLine();
+
+                    System.out.println("Please choose your password: ");
+                    String pw = scanner.nextLine();
+
+                    profServices.profCreate(id,email,pw);
+                    System.out.println("User " + email + " was created successfully!");
                     break;
                 }
                 case 3: {
