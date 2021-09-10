@@ -1,9 +1,20 @@
 package app.professor;
 
+import models.Student;
+import repositories.StudentRepo;
+import services.ProfServices;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class ProfActionMenu {
+
+    private static StudentRepo studentRepo = new StudentRepo();
     public static void display() {
+
+        List<Student> studentList = new ArrayList<>();
+        studentList = studentRepo.getAll();
 
         Scanner scanner = new Scanner(System.in);
         Boolean running = true;
@@ -11,27 +22,25 @@ public class ProfActionMenu {
         while (running) {
 
             System.out.println("1) Students List");
-            System.out.println("2) Students Schedule");
-            System.out.println("3) Scholarship Applications");
-            System.out.println("4) Students Tuition");
-            System.out.println("5) Logout");
+            System.out.println("2) Scholarship Applications");
+            System.out.println("3) Logout");
 
             Integer result = scanner.nextInt();
 
             switch (result) {
                 case 1: {
+                    System.out.println();
+                    for (Student st : studentList) {
+                        System.out.println(st);
+                    }
+                    System.out.println();
                     break;
                 }
                 case 2: {
+                    ProfScholarMenu.display();
                     break;
                 }
                 case 3: {
-                    break;
-                }
-                case 4: {
-                    break;
-                }
-                case 5: {
                     running = false;
                     break;
                 }

@@ -74,7 +74,7 @@ public class StudentRepo implements CrudRepository<Student>{
 
         try (Connection conn = cu.getConnection()) {
 
-            String sql = "select * from student";
+            String sql = "select * from student order by student_id";
 
             PreparedStatement ps = conn.prepareStatement(sql);
 

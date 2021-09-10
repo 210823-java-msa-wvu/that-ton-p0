@@ -1,6 +1,7 @@
 package models;
 
 public class Scholarship {
+    private Integer scholarshipID;
     private Integer studentID;
     private Boolean isApply;
     private Double amount;
@@ -10,11 +11,31 @@ public class Scholarship {
 
     }
 
-    public Scholarship(Integer studentID, Boolean isApply, Double amount, String decision) {
+    public Scholarship(Integer scholarshipID, Integer studentID, Boolean isApply, Double amount, String decision) {
+        this.scholarshipID = scholarshipID;
         this.studentID = studentID;
         this.isApply = isApply;
         this.amount = amount;
         this.decision = decision;
+    }
+
+    public Scholarship(Integer scholarshipID, Double amount, String decision) {
+        this.scholarshipID = scholarshipID;
+        this.amount = amount;
+        this.decision = decision;
+    }
+
+    public Scholarship(Integer scholarshipID, Boolean isApply) {
+        this.scholarshipID = scholarshipID;
+        this.isApply = isApply;
+    }
+
+    public Integer getScholarshipID() {
+        return scholarshipID;
+    }
+
+    public void setScholarshipID(Integer scholarshipID) {
+        this.scholarshipID = scholarshipID;
     }
 
     public Integer getStudentID() {
@@ -51,11 +72,11 @@ public class Scholarship {
 
     @Override
     public String toString() {
-        return "Scholarship{" +
-                "id=" + studentID +
-                ", isApply='" + (isApply) + '\'' +
-                ", amount='" + amount + '\'' +
-                ", decision='" + decision + '\'' +
-                '}';
+        return "Scholarship ID: " + scholarshipID +
+                " | Student ID: " + studentID +
+                " | isApply: " + (isApply) +
+                " | Award Amount: " + amount +
+                " | Decision: " + decision;
+
     }
 }

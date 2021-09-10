@@ -10,9 +10,7 @@ public class StudentActionMenu {
 
         while (running) {
 
-            System.out.println("1) Information");
-            System.out.println("2) Tuition");
-            System.out.println("3) Class Schedule");
+            System.out.println("1) My Information");
             System.out.println("4) Scholarship");
             System.out.println("5) Logout");
 
@@ -26,12 +24,6 @@ public class StudentActionMenu {
                     break;
                 }
                 case 3: {
-                    break;
-                }
-                case 4: {
-                    break;
-                }
-                case 5: {
                     running = false;
                     break;
                 }
