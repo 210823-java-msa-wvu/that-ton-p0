@@ -3,6 +3,8 @@ package services;
 import models.ProfUser;
 import models.Professor;
 import models.Scholarship;
+import models.Student;
+import repositories.ProfRepo;
 import repositories.ProfUserRepo;
 import repositories.ScholarRepo;
 
@@ -14,6 +16,7 @@ public class ProfServices {
 
     ProfUserRepo profUserRepo = new ProfUserRepo();
     ScholarRepo scholarRepo = new ScholarRepo();
+    ProfRepo profRepo = new ProfRepo();
 
     public boolean profLogin(String username, String password) {
         ProfUser pu = profUserRepo.getByUsername(username);
@@ -31,6 +34,12 @@ public class ProfServices {
         ProfUser pu = new ProfUser(id, email, pw);
         pu = profUserRepo.add(pu);
         return pu;
+    }
+
+    public Professor createInformation(Integer id, String fn, String ln, String em) {
+        Professor s = new Professor(id,fn,ln,em);
+        s = profRepo.add(s);
+        return s;
     }
 
     public void decision(Integer scholarshipID, Double amount, String decision) {
@@ -59,4 +68,26 @@ public class ProfServices {
         return scholarshipList;
 
     }
+
+    public boolean checkScholarshipID(Integer id) {
+        Scholarship pu = scholarRepo.getById(id);
+
+        if (pu != null){
+            if (id.equals(pu.getScholarshipID()))
+                return true;
+        }
+        return false;
+    }
+
+    public boolean checkProfId(Integer id) {
+        Professor pu = profRepo.getById(id);
+
+        if (pu != null){
+            if (id.equals(pu.getProfessorID()))
+                System.out.println("Professor ID " + id + " already exists!!!");
+            return false;
+        }
+        return true;
+    }
+
 }

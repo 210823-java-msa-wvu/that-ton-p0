@@ -1,7 +1,7 @@
-package app;
+package menu;
 
-import app.professor.ProfMenu;
-import app.student.StudentMenu;
+import menu.professor.ProfLoginMenu;
+import menu.student.StudentLoginMenu;
 
 import java.util.Scanner;
 
@@ -22,14 +22,15 @@ public class MainMenu {
 
             switch (result){
                 case 1: {
-                    ProfMenu.display();
+                    ProfLoginMenu.display();
                     break;
                 }
                 case 2: {
-                    StudentMenu.display();
+                    StudentLoginMenu.display();
                     break;
                 }
                 case 3: {
+                    System.out.println("Bye!!!See you later!!!");
                     running = false;
                     break;
                 }

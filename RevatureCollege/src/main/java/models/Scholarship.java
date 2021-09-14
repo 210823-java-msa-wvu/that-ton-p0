@@ -25,8 +25,14 @@ public class Scholarship {
         this.decision = decision;
     }
 
-    public Scholarship(Integer scholarshipID, Boolean isApply) {
+    public Scholarship(Integer studentID, Boolean isApply) {
+        this.studentID = studentID;
+        this.isApply = isApply;
+    }
+
+    public Scholarship(Integer scholarshipID, Integer studentID, Boolean isApply) {
         this.scholarshipID = scholarshipID;
+        this.studentID = studentID;
         this.isApply = isApply;
     }
 

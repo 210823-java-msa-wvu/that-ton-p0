@@ -57,6 +57,8 @@ public class ScholarRepo implements CrudRepository<Scholarship>{
                 a.setDecision(rs.getString("decision"));
                 return a;
             }
+            else
+                System.out.println("No record found with id " + id);
 
         } catch (SQLException e) {
             e.printStackTrace();

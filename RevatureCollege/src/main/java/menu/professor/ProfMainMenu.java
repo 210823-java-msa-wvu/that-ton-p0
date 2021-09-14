@@ -1,14 +1,13 @@
-package app.professor;
+package menu.professor;
 
 import models.Student;
 import repositories.StudentRepo;
-import services.ProfServices;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class ProfActionMenu {
+public class ProfMainMenu {
 
     private static StudentRepo studentRepo = new StudentRepo();
     public static void display() {

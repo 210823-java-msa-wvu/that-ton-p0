@@ -68,6 +68,53 @@ public class StudentRepo implements CrudRepository<Student>{
         return null;
     }
 
+    public Integer returnId(String email) {
+
+        try (Connection conn = cu.getConnection()) {
+            String sql = "select student_id from student where email = ?";
+
+            PreparedStatement ps = conn.prepareStatement(sql); // Setting up our SQL statement in this way helps prevent SQL Injection Attacks
+            ps.setString(1, email); // parameter Indexes start from 1 (NOT 0)
+
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                Integer a = rs.getInt("student_id");
+                return a;
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public Student getByEmail(String email) {
+
+        try (Connection conn = cu.getConnection()) {
+            String sql = "select * from student where email = ?";
+
+            PreparedStatement ps = conn.prepareStatement(sql); // Setting up our SQL statement in this way helps prevent SQL Injection Attacks
+            ps.setString(1, email); // parameter Indexes start from 1 (NOT 0)
+
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                Student a = new Student();
+                a.setStudentID(rs.getInt("student_id"));
+                a.setFirstName(rs.getString("first_name"));
+                a.setLastName(rs.getString("last_name"));
+                a.setStudentEmail(rs.getString("email"));
+                a.setStudentMajor(rs.getString("major"));
+                return a;
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public List<Student> getAll() {
 
         List<Student> students = new ArrayList<>();
