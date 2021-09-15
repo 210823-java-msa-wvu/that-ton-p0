@@ -3,22 +3,18 @@ Revature bootcamp project 0
 
 # Revature College
 This is a Java console-based application; using Java8, Maven, PostgreSQL, and AWS RDS.
-
-Features: there are 2 types of users - Student and Professor.
+The idea is to create a college portal in which there are 2 types of users: Student and Professor.
 - A student can:
   + creating new account
   + login/logout
-  + checking current GPA / major
-  + checking / paying tuition
+  + checking student information
   + applying scholarship
-  + checking class schedule
 - A professor can
   + creating new account
   + login/logout
-  + checking student list
-  + updating student's GPA / major
+  + checking students list
+  + Checking current scholarship applications list
   + approving/denying scholarship application
-  + removing/updating student's classes
 
 
 
