@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class ProfMainMenu {
 
     private static StudentRepo studentRepo = new StudentRepo();
-    public static void display() {
+    public static void display(String email) {
 
         List<Student> studentList = new ArrayList<>();
         studentList = studentRepo.getAll();
@@ -20,6 +20,8 @@ public class ProfMainMenu {
 
         while (running) {
 
+            System.out.println("Welcome " + email);
+            System.out.println();
             System.out.println("1) Students List");
             System.out.println("2) Scholarship Applications");
             System.out.println("3) Logout");

@@ -19,6 +19,7 @@ public class ProfScholarMenu {
 
         while (running) {
 
+            System.out.println();
             System.out.println("1) Application List");
             System.out.println("2) Application Decision");
             System.out.println("3) Back");
@@ -52,6 +53,10 @@ public class ProfScholarMenu {
                             } else {
                                 System.out.println("Wrong input!!!");
                             }
+                        }
+                        else {
+                            System.out.println("No record found with id " + id);
+                            System.out.println();
                         }
                     }catch (Exception e) {
                         System.out.println("Wrong input format!!!");

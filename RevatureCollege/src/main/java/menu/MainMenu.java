@@ -14,6 +14,7 @@ public class MainMenu {
         while(running) {
 
             System.out.println("Welcome to Revature College!!! Revature is the leading provider of entry-level tech talent powering global leaders.");
+            System.out.println();
             System.out.println("1) Professor Page");
             System.out.println("2) Student Page");
             System.out.println("3) Exit");

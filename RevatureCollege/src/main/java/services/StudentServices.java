@@ -46,21 +46,13 @@ public class StudentServices {
         Student pu = studentRepo.getById(id);
 
         if (pu != null){
-            if (id.equals(pu.getStudentID()))
+            if (id.equals(pu.getStudentID())) {
                 System.out.println("Student ID " + id + " already exists!!!");
-                return false;
+                System.out.println();
+            }
+            return false;
         }
         return true;
-    }
-
-    public boolean checkScholarshipID(Integer id) {
-        Scholarship pu = scholarRepo.getById(id);
-
-        if (pu != null){
-            if (id.equals(pu.getScholarshipID()))
-                return true;
-        }
-        return false;
     }
 
     public Integer getID(String email) {
@@ -90,6 +82,24 @@ public class StudentServices {
         sc = scholarRepo.add(sc);
         return sc;
 
+    }
+
+    public boolean checkScholarshipID(Integer id) {
+        Scholarship pu = scholarRepo.getById(id);
+
+        if (pu != null){
+            if (id.equals(pu.getScholarshipID()))
+                return true;
+        }
+        return false;
+    }
+
+    public boolean checkIsApply(Integer id) {
+        Scholarship pu = scholarRepo.getById(id);
+        if ((pu.getApply()) == true)
+            return true;
+        else
+            return false;
     }
 
 }

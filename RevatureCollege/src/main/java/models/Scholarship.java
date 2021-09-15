@@ -56,8 +56,8 @@ public class Scholarship {
         return isApply;
     }
 
-    public void setApply(Boolean apply) {
-        isApply = apply;
+    public void setApply(Boolean isApply) {
+        this.isApply = isApply;
     }
 
     public Double getAmount() {

@@ -15,6 +15,7 @@ public class StudentLoginMenu {
 
         while(running) {
 
+            System.out.println();
             System.out.println("1) Student login");
             System.out.println("2) Signup new account");
             System.out.println("3) Back");
@@ -72,6 +73,7 @@ public class StudentLoginMenu {
                         }
                     } catch (Exception e) {
                         System.out.println("Wrong input ID format!!!");
+                        System.out.println();
                         scanner.next();
                     }
 

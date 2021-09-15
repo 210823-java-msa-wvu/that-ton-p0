@@ -15,6 +15,7 @@ public class ProfLoginMenu {
 
         while(running) {
 
+            System.out.println();
             System.out.println("1) Professor login");
             System.out.println("2) Signup new account");
             System.out.println("3) Back");
@@ -34,8 +35,7 @@ public class ProfLoginMenu {
                     boolean signInResponse = profServices.profLogin(profEmail, profPassword);
 
                     if (signInResponse) {
-                        System.out.println("Welcome " + profEmail + "!!!");
-                        ProfMainMenu.display();
+                        ProfMainMenu.display(profEmail);
                     }
                     else {
                         System.out.println("Your email or password does not match.");
